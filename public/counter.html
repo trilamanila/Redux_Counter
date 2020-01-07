@@ -14,14 +14,61 @@
         align-items: center;
         height: 100vh;
       }
+      .counter{
+        display: flex;
+        width: 500px;
+        border: 2px solid #000;
+      }
+      .counter #digitalNumber{
+        width: 100%;
+        display: block;
+        font-size: 4rem;
+        text-align: center;
+      }
+      .counter .buttons{
+        width: 100%;
+        display: flex;
+      }
+      .counter .buttons .button{
+        width: 50%;
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        transition: background .4s ease-in-out;
+        cursor: pointer;
+      }
+      .counter .buttons .button:hover{
+        background: red;
+      }
     </style>
   </head>
   <body>
     <div class="counter">
       <div id="digitalNumber">0</div>
+      <div class="buttons">
       <div id="increment">+</div>
-      <div id="increment">-</div>
+      <div id="decrement">-</div>
     </div>
+    </div>
+    <script>
+      const { createStore, combineReducers} = Redux
+
+      const CLICKED_INCREMENT = () => {
+        return {
+          type: 'CLICKED_INCREMENT',
+          payload: 'Plus'
+        }
+      }
+      const CLICKED_INCREMENT = () => {
+        return {
+          type: 'CLICKED_DECREMENT',
+          payload: 'Minus'
+        }
+      }
+
     </script>
   </body>
 </html>
